@@ -1,4 +1,6 @@
-﻿namespace PricerSupermarket.Tests
+﻿using PricerSupermarket.Console.Models;
+
+namespace PricerSupermarket.Console
 {
     /// <summary>
     /// Define the Pricer Interface
@@ -8,6 +10,7 @@
         /// <summary>
         /// Gets the total price.
         /// </summary>
-        decimal GetTotalPrice(List<Product> products);
+        /// <param name="cart">The cart.</param>
+        decimal GetTotalPrice(Cart cart);
     }
 }

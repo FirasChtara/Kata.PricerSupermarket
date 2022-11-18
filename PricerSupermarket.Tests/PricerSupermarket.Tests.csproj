@@ -20,4 +20,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PricerSupermarket.Console\PricerSupermarket.Console.csproj" />
+  </ItemGroup>
+
 </Project>
