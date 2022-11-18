@@ -3,9 +3,9 @@
 namespace PricerSupermarket.Console
 {
     /// <summary>
-    /// Define the Pricer Interface
+    /// Define the Cart Pricer Interface
     /// </summary>
-    public interface IPricer
+    public interface ICartPricer
     {
         /// <summary>
         /// Gets the total price.
