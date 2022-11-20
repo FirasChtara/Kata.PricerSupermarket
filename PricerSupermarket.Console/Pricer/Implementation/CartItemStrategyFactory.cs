@@ -25,7 +25,7 @@ namespace PricerSupermarket.Console.Pricer.Implementation
                 case Promotion.ThreeForOneDollar:
                     return new ThreeForOneDollarItemPricer();
                 case Promotion.TwoPoundsForOneDollar:
-                    throw new NotImplementedException();
+                    return new TwoPoundForOneDollar();
                 default:
                     return new StandardItemPricer();
             }

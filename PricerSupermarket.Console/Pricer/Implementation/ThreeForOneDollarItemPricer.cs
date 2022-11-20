@@ -15,14 +15,17 @@ namespace PricerSupermarket.Console.Pricer.Implementation
         /// <returns></returns>
         public decimal Price(CartItem cartItem)
         {
-            decimal price = cartItem.Quantity / 3;
+            if (cartItem.Unit != EnumHelpers.Unit.Piece)
+                throw new InvalidOperationException("Product Not eligible for promotion!");
+
+            decimal price = (int)(cartItem.Quantity / 3);
 
             for (int i = 0; i < cartItem.Quantity % 3; i++)
             {
                 price += cartItem.Product.Price;
             }
 
-            return price;
+            return decimal.Round(price, 2, MidpointRounding.AwayFromZero);
         }
     }
 }

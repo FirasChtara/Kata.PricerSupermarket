@@ -10,7 +10,7 @@ namespace PricerSupermarket.Console.Models
         /// <summary>
         /// Gets or sets the quantity.
         /// </summary>
-        public int Quantity { get; set; }
+        public double Quantity { get; set; }
 
         /// <summary>
         /// Gets or sets the product.
@@ -21,5 +21,7 @@ namespace PricerSupermarket.Console.Models
         /// Gets or sets the promotion.
         /// </summary>
         public Promotion Promotion { get; set; }
+
+        public Unit Unit { get; set; }
     }
 }

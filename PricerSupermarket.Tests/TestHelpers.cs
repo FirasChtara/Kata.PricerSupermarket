@@ -19,21 +19,28 @@ namespace PricerSupermarket.Tests
                   new CartItem
                   {
                       Quantity= 2,
-                      Product = productsList[0]
-
+                      Product = productsList[0],
+                      Unit = Unit.Piece
                   },
                    new CartItem
                   {
                       Quantity= 4,
-                      Product = productsList[1]
-
+                      Product = productsList[1],
+                      Unit = Unit.Piece
                   },
                      new CartItem
                   {
                       Quantity= 7,
                       Product = productsList[0],
-                      Promotion=Promotion.ThreeForOneDollar
-
+                      Promotion=Promotion.ThreeForOneDollar,
+                      Unit = Unit.Piece
+                  },
+                     new CartItem
+                  {
+                      Quantity= 1600,
+                      Product = productsList[0],
+                      Promotion=Promotion.TwoPoundsForOneDollar,
+                      Unit = Unit.Gram
                   }
                 }
             };

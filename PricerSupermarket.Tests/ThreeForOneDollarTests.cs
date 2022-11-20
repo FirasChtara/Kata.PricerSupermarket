@@ -14,7 +14,7 @@ namespace PricerSupermarket.Tests
         [InlineData(1, 1.2)]
         [InlineData(5, 3.4)]
         [InlineData(7, 3.2)]
-        public void should_apply_promotion_threeForOneDollar_with_illegible_product(int quantity, decimal expectedPrice)
+        public void should_apply_promotion_threeForOneDollar_with_eligible_product(int quantity, decimal expectedPrice)
         {
             // Arrange
             var cartItem = new CartItem()

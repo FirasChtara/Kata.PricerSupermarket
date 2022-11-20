@@ -17,7 +17,8 @@ namespace PricerSupermarket.Console.Pricer.Implementation
             if (cartItem.Product == null)
                 throw new ArgumentNullException(nameof(cartItem.Product));
 
-            return cartItem.Quantity * cartItem.Product.Price;
+            var price = (decimal)cartItem.Quantity * cartItem.Product.Price;
+            return decimal.Round(price, 2, MidpointRounding.AwayFromZero);
         }
     }
 }

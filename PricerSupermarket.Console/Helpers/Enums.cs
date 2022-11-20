@@ -5,14 +5,11 @@
     /// </summary>
     public enum Unit
     {
-        /// <summary>
-        /// The Piece
-        /// </summary>
-        Piece = 0,
-        /// <summary>
-        /// The weight in Kg
-        /// </summary>
-        Weight = 1,
+        Piece,
+        Gram,
+        Ounce,
+        Pound,
+        Kg
     }
 
     /// <summary>
@@ -28,7 +25,7 @@
         /// <summary>
         /// The by two get one free
         /// </summary>
-        ByTwoGetOneFree = 1 ,
+        ByTwoGetOneFree = 1,
 
         /// <summary>
         /// The three for one dollar
