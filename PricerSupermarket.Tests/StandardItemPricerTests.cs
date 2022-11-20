@@ -19,7 +19,7 @@ namespace PricerSupermarket.Tests
             var actual = new StandardItemPricer().Price(cartItem);
 
             // Assert
-            Assert.Equal(240, actual);
+            Assert.Equal(2.4m, actual);
         }
 
         [Fact]

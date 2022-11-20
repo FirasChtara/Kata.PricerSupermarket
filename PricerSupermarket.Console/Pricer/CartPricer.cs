@@ -9,17 +9,17 @@ namespace PricerSupermarket.Console.Pricer
     public class CartPricer : ICartPricer
     {
         /// <summary>
-        /// The cart item pricer
+        /// The cart item strategy factory
         /// </summary>
-        ICartItemPricer _cartItemPricer;
+        private readonly ICartItemStrategyFactory _cartItemStrategyFactory;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CartPricer"/> class.
         /// </summary>
-        /// <param name="cartItemPricer">The cart item pricer.</param>
-        public CartPricer(ICartItemPricer cartItemPricer)
+        /// <param name="cartItemStrategyFactory">The cart item strategy factory.</param>
+        public CartPricer(ICartItemStrategyFactory cartItemStrategyFactory)
         {
-            _cartItemPricer = cartItemPricer ?? throw new ArgumentNullException(nameof(cartItemPricer));
+            _cartItemStrategyFactory = cartItemStrategyFactory;
         }
 
         /// <inheritdoc />
@@ -27,10 +27,12 @@ namespace PricerSupermarket.Console.Pricer
         {
             decimal total = 0;
 
-            cart.CartItems.ForEach(p =>
+            cart.CartItems.ForEach(item =>
             {
-                total += _cartItemPricer.Price(p);
+                ICartItemPricer pricer = _cartItemStrategyFactory.CreateStrategy(item);
+                total += pricer.Price(item);
             });
+
             return total;
         }
     }

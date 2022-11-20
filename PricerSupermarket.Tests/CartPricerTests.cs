@@ -12,16 +12,10 @@ namespace PricerSupermarket.Tests
             var cart = TestHelpers.InitCart(productsList);
 
             // Act
-            var totalPrice = new CartPricer(new StandardItemPricer()).GetTotalPrice(cart);
+            var totalPrice = new CartPricer(new CartItemStrategyFactory()).GetTotalPrice(cart);
 
             // Assert
-            Assert.Equal(820, totalPrice);
-        }
-
-        [Fact]
-        public void should_throw_argument_exception_if_itemPricer_is_null()
-        {
-            Assert.ThrowsAny<ArgumentNullException>(() => new CartPricer(null));
+            Assert.Equal(11.4m, totalPrice);
         }
     }
 }

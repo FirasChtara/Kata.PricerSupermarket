@@ -1,4 +1,5 @@
-﻿using PricerSupermarket.Console.Models;
+﻿using PricerSupermarket.Console.EnumHelpers;
+using PricerSupermarket.Console.Models;
 
 namespace PricerSupermarket.Tests
 {
@@ -26,6 +27,13 @@ namespace PricerSupermarket.Tests
                       Quantity= 4,
                       Product = productsList[1]
 
+                  },
+                     new CartItem
+                  {
+                      Quantity= 7,
+                      Product = productsList[0],
+                      Promotion=Promotion.ThreeForOneDollar
+
                   }
                 }
             };
@@ -43,13 +51,13 @@ namespace PricerSupermarket.Tests
                  {
                     Id = Guid.NewGuid(),
                     Name= "Product Name 1",
-                    Price = 120,
+                    Price = 1.2m,
                  },
                     new Product
                  {
                     Id = Guid.NewGuid(),
                     Name= "Product Name 2",
-                    Price = 145,
+                    Price = 1.45m,
                  }
              };
         }
