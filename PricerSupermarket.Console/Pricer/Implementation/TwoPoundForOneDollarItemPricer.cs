@@ -3,7 +3,7 @@ using PricerSupermarket.Console.Pricer.Abstraction;
 
 namespace PricerSupermarket.Console.Pricer.Implementation
 {
-    public class TwoPoundForOneDollar : ICartItemPricer
+    public class TwoPoundForOneDollarItemPricer : ICartItemPricer
     {
         public decimal Price(CartItem cartItem)
         {

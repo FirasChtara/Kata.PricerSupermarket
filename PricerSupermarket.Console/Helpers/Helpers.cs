@@ -7,7 +7,6 @@ namespace PricerSupermarket.Console.Helpers
     /// </summary>
     public static class Helpers
     {
-
         /// <summary>
         /// Converts to pound.
         /// </summary>
@@ -17,7 +16,7 @@ namespace PricerSupermarket.Console.Helpers
         {
             switch (fromUnit)
             {
-                case Unit.Piece: throw new InvalidOperationException("Convertion not Exist");
+                case Unit.Piece: throw new InvalidOperationException("Not Supported Convertion");
                 case Unit.Gram: return Constants.GramToPoundConvertion * value;
                 case Unit.Ounce: return Constants.OunceToPoundConvertion * value;
                 case Unit.Pound: return value;

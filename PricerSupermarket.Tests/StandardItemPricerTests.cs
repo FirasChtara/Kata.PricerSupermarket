@@ -34,8 +34,6 @@ namespace PricerSupermarket.Tests
 
             // Act + Assert
             var ex = Assert.ThrowsAny<Exception>(() => new StandardItemPricer().Price(cartItem));
-
-
         }
     }
 }

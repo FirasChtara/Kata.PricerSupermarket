@@ -25,7 +25,7 @@
         /// <summary>
         /// The by two get one free
         /// </summary>
-        ByTwoGetOneFree = 1,
+        BuyTwoGetOneFree = 1,
 
         /// <summary>
         /// The three for one dollar

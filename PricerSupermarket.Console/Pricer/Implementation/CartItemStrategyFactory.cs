@@ -20,12 +20,12 @@ namespace PricerSupermarket.Console.Pricer.Implementation
             {
                 case Promotion.WithoutPromotion:
                     return new StandardItemPricer();
-                case Promotion.ByTwoGetOneFree:
-                    throw new NotImplementedException();
+                case Promotion.BuyTwoGetOneFree:
+                    return new BuyTwoGetOneFreeItemPricer();
                 case Promotion.ThreeForOneDollar:
                     return new ThreeForOneDollarItemPricer();
                 case Promotion.TwoPoundsForOneDollar:
-                    return new TwoPoundForOneDollar();
+                    return new TwoPoundForOneDollarItemPricer();
                 default:
                     return new StandardItemPricer();
             }

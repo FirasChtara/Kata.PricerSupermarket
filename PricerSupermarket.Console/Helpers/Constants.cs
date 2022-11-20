@@ -9,10 +9,12 @@
         /// The gram to pound convertion
         /// </summary>
         public const double GramToPoundConvertion = 0.0022046226D;
+        
         /// <summary>
         /// The ounce to pound convertion
         /// </summary>
         public const double OunceToPoundConvertion = 0.0625D;
+       
         /// <summary>
         /// The kg to pound convertion
         /// </summary>

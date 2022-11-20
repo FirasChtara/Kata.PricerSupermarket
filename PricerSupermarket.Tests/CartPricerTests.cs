@@ -15,7 +15,7 @@ namespace PricerSupermarket.Tests
             var totalPrice = new CartPricer(new CartItemStrategyFactory()).GetTotalPrice(cart);
 
             // Assert
-            Assert.Equal(14.23m, totalPrice);
+            Assert.Equal(20.23m, totalPrice);
         }
     }
 }

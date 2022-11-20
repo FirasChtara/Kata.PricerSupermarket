@@ -41,6 +41,13 @@ namespace PricerSupermarket.Tests
                       Product = productsList[0],
                       Promotion=Promotion.TwoPoundsForOneDollar,
                       Unit = Unit.Gram
+                  },
+                     new CartItem
+                  {
+                      Quantity= 7,
+                      Product = productsList[0],
+                      Promotion=Promotion.BuyTwoGetOneFree,
+                      Unit = Unit.Piece
                   }
                 }
             };

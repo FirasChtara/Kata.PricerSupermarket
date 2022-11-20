@@ -27,7 +27,7 @@ namespace PricerSupermarket.Tests
             };
 
             // Act
-            var actual = new TwoPoundForOneDollar().Price(cartItem);
+            var actual = new TwoPoundForOneDollarItemPricer().Price(cartItem);
 
             // Assert
             Assert.Equal(expectedPrice, actual);
