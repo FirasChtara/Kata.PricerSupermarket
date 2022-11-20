@@ -1,4 +1,6 @@
-﻿namespace PricerSupermarket.Console.Models
+﻿using PricerSupermarket.Console.EnumHelpers;
+
+namespace PricerSupermarket.Console.Models
 {
     /// <summary>
     ///  Define the Cart Item class
@@ -14,5 +16,10 @@
         /// Gets or sets the product.
         /// </summary>
         public Product Product { get; set; }
+
+        /// <summary>
+        /// Gets or sets the promotion.
+        /// </summary>
+        public Promotion Promotion { get; set; }
     }
 }

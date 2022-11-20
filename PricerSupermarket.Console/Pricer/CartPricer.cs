@@ -8,7 +8,15 @@ namespace PricerSupermarket.Console.Pricer
     /// <seealso cref="ICartPricer" />
     public class CartPricer : ICartPricer
     {
+        /// <summary>
+        /// The cart item pricer
+        /// </summary>
         ICartItemPricer _cartItemPricer;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CartPricer"/> class.
+        /// </summary>
+        /// <param name="cartItemPricer">The cart item pricer.</param>
         public CartPricer(ICartItemPricer cartItemPricer)
         {
             _cartItemPricer = cartItemPricer ?? throw new ArgumentNullException(nameof(cartItemPricer));
