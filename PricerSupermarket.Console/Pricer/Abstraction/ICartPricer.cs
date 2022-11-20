@@ -1,6 +1,6 @@
 ﻿using PricerSupermarket.Console.Models;
 
-namespace PricerSupermarket.Console
+namespace PricerSupermarket.Console.Pricer.Abstraction
 {
     /// <summary>
     /// Define the Cart Pricer Interface

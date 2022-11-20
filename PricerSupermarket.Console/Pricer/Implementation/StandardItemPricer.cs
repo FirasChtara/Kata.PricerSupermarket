@@ -1,6 +1,7 @@
 ﻿using PricerSupermarket.Console.Models;
+using PricerSupermarket.Console.Pricer.Abstraction;
 
-namespace PricerSupermarket.Console.Pricer
+namespace PricerSupermarket.Console.Pricer.Implementation
 {
     /// <summary>
     ///  Define the Standard Item Pricer

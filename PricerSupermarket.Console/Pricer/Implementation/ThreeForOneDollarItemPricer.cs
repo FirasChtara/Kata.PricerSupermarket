@@ -1,6 +1,7 @@
 ﻿using PricerSupermarket.Console.Models;
+using PricerSupermarket.Console.Pricer.Abstraction;
 
-namespace PricerSupermarket.Console.Pricer
+namespace PricerSupermarket.Console.Pricer.Implementation
 {
     /// <summary>
     /// Define the Three For One Dollar Item Pricer
@@ -20,7 +21,7 @@ namespace PricerSupermarket.Console.Pricer
             {
                 price += cartItem.Product.Price;
             }
-            
+
             return price;
         }
     }

@@ -1,6 +1,6 @@
 ﻿using PricerSupermarket.Console.EnumHelpers;
 using PricerSupermarket.Console.Models;
-using PricerSupermarket.Console.Pricer;
+using PricerSupermarket.Console.Pricer.Implementation;
 
 namespace PricerSupermarket.Tests
 {

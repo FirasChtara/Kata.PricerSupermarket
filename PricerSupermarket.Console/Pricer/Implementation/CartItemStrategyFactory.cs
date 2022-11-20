@@ -1,7 +1,8 @@
 ﻿using PricerSupermarket.Console.EnumHelpers;
 using PricerSupermarket.Console.Models;
+using PricerSupermarket.Console.Pricer.Abstraction;
 
-namespace PricerSupermarket.Console.Pricer
+namespace PricerSupermarket.Console.Pricer.Implementation
 {
     /// <summary>
     ///  Define the Cart Item Strategy Factory
@@ -13,7 +14,6 @@ namespace PricerSupermarket.Console.Pricer
         /// </summary>
         /// <param name="cartItem">The cart item.</param>
         /// <returns></returns>
-        /// <exception cref="System.NotImplementedException"></exception>
         public ICartItemPricer CreateStrategy(CartItem cartItem)
         {
             switch (cartItem.Promotion)

@@ -1,4 +1,4 @@
-using PricerSupermarket.Console.Pricer;
+using PricerSupermarket.Console.Pricer.Implementation;
 
 namespace PricerSupermarket.Tests
 {
