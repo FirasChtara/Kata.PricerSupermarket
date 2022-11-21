@@ -1,39 +1,38 @@
 ﻿using PricerSupermarket.Console.Models;
 using PricerSupermarket.Console.Pricer.Implementation;
 
-namespace PricerSupermarket.Tests
+namespace PricerSupermarket.Tests;
+
+public class StandardItemPricerTests
 {
-    public class StandardItemPricerTests
+    [Fact]
+    public void should_calcul_price_of_cart_item()
     {
-        [Fact]
-        public void should_calcul_price_of_cart_item()
+        // Arrange
+        var cartItem = new CartItem()
         {
-            // Arrange
-            var cartItem = new CartItem()
-            {
-                Product = TestHelpers.InitProductsList().FirstOrDefault(),
-                Quantity = 2
-            };
+            Product = TestHelpers.InitProductsList().FirstOrDefault(),
+            Quantity = 2
+        };
 
-            // Act
-            var actual = new StandardItemPricer().Price(cartItem);
+        // Act
+        var actual = new StandardItemPricer().Price(cartItem);
 
-            // Assert
-            Assert.Equal(2.4m, actual);
-        }
+        // Assert
+        Assert.Equal(2.4m, actual);
+    }
 
-        [Fact]
-        public void should_throw_exception_when_product_in_cartItem_is_null()
+    [Fact]
+    public void should_throw_exception_when_product_in_cartItem_is_null()
+    {
+        // Arrange
+        var cartItem = new CartItem()
         {
-            // Arrange
-            var cartItem = new CartItem()
-            {
-                Product = null,
-                Quantity = 2
-            };
+            Product = null,
+            Quantity = 2
+        };
 
-            // Act + Assert
-            var ex = Assert.ThrowsAny<Exception>(() => new StandardItemPricer().Price(cartItem));
-        }
+        // Act + Assert
+        var ex = Assert.ThrowsAny<Exception>(() => new StandardItemPricer().Price(cartItem));
     }
 }

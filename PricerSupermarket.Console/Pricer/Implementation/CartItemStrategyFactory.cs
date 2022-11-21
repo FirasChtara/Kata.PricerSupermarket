@@ -2,33 +2,32 @@
 using PricerSupermarket.Console.Models;
 using PricerSupermarket.Console.Pricer.Abstraction;
 
-namespace PricerSupermarket.Console.Pricer.Implementation
+namespace PricerSupermarket.Console.Pricer.Implementation;
+
+/// <summary>
+///  Define the Cart Item Strategy Factory
+/// </summary>
+public class CartItemStrategyFactory : ICartItemStrategyFactory
 {
     /// <summary>
-    ///  Define the Cart Item Strategy Factory
+    /// Creates the strategy.
     /// </summary>
-    public class CartItemStrategyFactory : ICartItemStrategyFactory
+    /// <param name="cartItem">The cart item.</param>
+    /// <returns></returns>
+    public ICartItemPricer CreateStrategy(CartItem cartItem)
     {
-        /// <summary>
-        /// Creates the strategy.
-        /// </summary>
-        /// <param name="cartItem">The cart item.</param>
-        /// <returns></returns>
-        public ICartItemPricer CreateStrategy(CartItem cartItem)
+        switch (cartItem.Promotion)
         {
-            switch (cartItem.Promotion)
-            {
-                case Promotion.WithoutPromotion:
-                    return new StandardItemPricer();
-                case Promotion.BuyTwoGetOneFree:
-                    return new BuyTwoGetOneFreeItemPricer();
-                case Promotion.ThreeForOneDollar:
-                    return new ThreeForOneDollarItemPricer();
-                case Promotion.TwoPoundsForOneDollar:
-                    return new TwoPoundForOneDollarItemPricer();
-                default:
-                    return new StandardItemPricer();
-            }
+            case Promotion.WithoutPromotion:
+                return new StandardItemPricer();
+            case Promotion.BuyTwoGetOneFree:
+                return new BuyTwoGetOneFreeItemPricer();
+            case Promotion.ThreeForOneDollar:
+                return new ThreeForOneDollarItemPricer();
+            case Promotion.TwoPoundsForOneDollar:
+                return new TwoPoundForOneDollarItemPricer();
+            default:
+                return new StandardItemPricer();
         }
     }
 }

@@ -1,25 +1,24 @@
 ﻿using PricerSupermarket.Console.Models;
 using PricerSupermarket.Console.Pricer.Abstraction;
 
-namespace PricerSupermarket.Console.Pricer.Implementation
+namespace PricerSupermarket.Console.Pricer.Implementation;
+
+/// <summary>
+///  Define the Standard Item Pricer
+/// </summary>
+public class StandardItemPricer : ICartItemPricer
 {
     /// <summary>
-    ///  Define the Standard Item Pricer
+    /// Caculate price for the standard cart item
     /// </summary>
-    public class StandardItemPricer : ICartItemPricer
+    /// <param name="cartItem">The cart item.</param>
+    public decimal Price(CartItem cartItem)
     {
-        /// <summary>
-        /// Prices the specified cart item.
-        /// </summary>
-        /// <param name="cartItem">The cart item.</param>
-        public decimal Price(CartItem cartItem)
-        {
-            if (cartItem.Product == null)
-                throw new ArgumentNullException(nameof(cartItem.Product));
+        if (cartItem.Product == null)
+            throw new ArgumentNullException(nameof(cartItem.Product));
 
-            var price = (decimal)cartItem.Quantity * cartItem.Product.Price;
-            
-            return decimal.Round(price, 2, MidpointRounding.AwayFromZero);
-        }
+        var price = (decimal)cartItem.Quantity * cartItem.Product.Price;
+        
+        return decimal.Round(price, 2, MidpointRounding.AwayFromZero);
     }
 }

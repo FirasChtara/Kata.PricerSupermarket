@@ -1,27 +1,29 @@
 ﻿using PricerSupermarket.Console.EnumHelpers;
 
-namespace PricerSupermarket.Console.Models
+namespace PricerSupermarket.Console.Models;
+
+/// <summary>
+///  Define the Cart Item class
+/// </summary>
+public class CartItem
 {
     /// <summary>
-    ///  Define the Cart Item class
+    /// Gets or sets the quantity.
     /// </summary>
-    public class CartItem
-    {
-        /// <summary>
-        /// Gets or sets the quantity.
-        /// </summary>
-        public double Quantity { get; set; }
+    public double Quantity { get; set; }
 
-        /// <summary>
-        /// Gets or sets the product.
-        /// </summary>
-        public Product Product { get; set; }
+    /// <summary>
+    /// Gets or sets the product.
+    /// </summary>
+    public Product Product { get; set; }
 
-        /// <summary>
-        /// Gets or sets the promotion.
-        /// </summary>
-        public Promotion Promotion { get; set; }
+    /// <summary>
+    /// Gets or sets the promotion.
+    /// </summary>
+    public Promotion Promotion { get; set; }
 
-        public Unit Unit { get; set; }
-    }
+    /// <summary>
+    /// Gets or sets the unit.
+    /// </summary>
+    public Unit Unit { get; set; }
 }

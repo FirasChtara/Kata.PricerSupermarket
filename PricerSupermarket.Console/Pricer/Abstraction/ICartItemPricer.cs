@@ -1,17 +1,16 @@
 ﻿using PricerSupermarket.Console.Models;
 
-namespace PricerSupermarket.Console.Pricer.Abstraction
+namespace PricerSupermarket.Console.Pricer.Abstraction;
+
+/// <summary>
+/// Define the Cart Item Pricer Interface
+/// </summary>
+public interface ICartItemPricer
 {
     /// <summary>
-    /// Define the Cart Item Pricer Interface
+    /// calculate price of specified cart item.
     /// </summary>
-    public interface ICartItemPricer
-    {
-        /// <summary>
-        /// Prices the specified cart item.
-        /// </summary>
-        /// <param name="cartItem">The cart item.</param>
-        /// <returns></returns>
-        decimal Price(CartItem cartItem);
-    }
+    /// <param name="cartItem">The cart item.</param>
+    /// <returns></returns>
+    decimal Price(CartItem cartItem);
 }

@@ -1,21 +1,20 @@
 using PricerSupermarket.Console.Pricer.Implementation;
 
-namespace PricerSupermarket.Tests
+namespace PricerSupermarket.Tests;
+
+public class CartPricerTests
 {
-    public class CartPricerTests
+    [Fact]
+    public void should_calcul_total_price_of_all_items()
     {
-        [Fact]
-        public void should_calcul_total_price_of_all_items()
-        {
-            // Arrange
-            var productsList = TestHelpers.InitProductsList();
-            var cart = TestHelpers.InitCart(productsList);
+        // Arrange
+        var productsList = TestHelpers.InitProductsList();
+        var cart = TestHelpers.InitCart(productsList);
 
-            // Act
-            var totalPrice = new CartPricer(new CartItemStrategyFactory()).GetTotalPrice(cart);
+        // Act
+        var totalPrice = new CartPricer(new CartItemStrategyFactory()).GetTotalPrice(cart);
 
-            // Assert
-            Assert.Equal(20.23m, totalPrice);
-        }
+        // Assert
+        Assert.Equal(20.23m, totalPrice);
     }
 }
